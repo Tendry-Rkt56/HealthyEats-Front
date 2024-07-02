@@ -1,4 +1,4 @@
-# symfony-ecommerce-alimentation
+# HealtyEATS-Frontend
 Un projet front-end simple qui affiche des articles sur l'alimentation saine.
 
 ## Illustrations
