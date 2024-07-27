@@ -29,3 +29,23 @@ buttonmenu.addEventListener("click", () => {
     nav.classList.toggle("active");
 });
 
+const options = {
+    root: null,
+    marginRoot: '0px',
+    threshold: 0.2,
+}
+
+const intersection = function (entries, observer) {
+    entries.forEach(entry => {
+        if (entry.intersectionRatio > options.threshold) {
+            console.log('visible')
+            entry.target.classList.add('reveal-visible')
+            observer.unobserve(entry.target)
+        }
+    })
+}
+
+const observer = new IntersectionObserver(intersection, options)
+document.querySelectorAll("[class*='reveal']").forEach(reveal => {
+    observer.observe(reveal)
+})
